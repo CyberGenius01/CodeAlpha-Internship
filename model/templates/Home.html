@@ -1,0 +1,47 @@
+﻿{% extends 'base.html' %}
+{% block title %}
+Will Titanic Sink? or not!
+{% endblock %}
+{% block content %}
+<div class="bd-example" style="width: 1500px!important; position: absolute; z-index: 1; left:250px; top: 100px;">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style=" min-height: 800px !important">
+                <img src="{{url_for('static',filename='media/roc.png')}}" class="d-block w-80" style="height:600px !important; margin-left: 310px" alt="...">
+                <div class="carousel-caption d-none d-md-block" style="font-family: 'Quicksand'; position:absolute; left: 22%; bottom: +50px; max-width: 800px; border: 1px solid white; border-radius: 8px; margin-bottom: 20px;">
+                    <h5>Description:</h5><br />
+                    <h6>Image shows that the highest accuracy is achieved by the Support Vector Machine (Classical Machine Learning Model). The SVC employed here uses Gaussian Kernel and degree 5 interploation techniques.</h6>
+                </div>
+            </div>
+            <div class="carousel-item" style=" min-height: 800px !important">
+                <img src="{{url_for('static',filename='media/ann.png')}}" class="d-block w-95" style="height:600px !important;" alt="...">
+                <div class="carousel-caption d-none d-md-block" style="font-family: 'Quicksand'; position: absolute; left: 22%; bottom: +50px; max-width: 800px; border: 1px solid white; border-radius: 8px; margin-bottom: 20px;">
+                    <h5>Description:</h5><br />
+                    <h6>Image shows accuracy and loss of classification whether a person will sink or not! is quite turbulent. Hence Deep learning technique empolyed here, was unable to understand the data.</h6>
+                </div>
+            </div>
+            <div class="carousel-item" style=" min-height: 800px !important">
+                <img src="{{url_for('static',filename='media/model.png')}}" class="d-block w-95" style="height:500px !important; margin-left: 360px; margin-top:60px;" alt="...">
+                <div class="carousel-caption d-none d-md-block" style="font-family: 'Quicksand'; position: absolute; left: 22%; bottom: +50px; max-width: 800px; border: 1px solid white; border-radius: 8px; margin-bottom: 20px; padding:2px">
+                    <h5>Description:</h5><br />
+                                         <h6>This is the model architecture employed in Deep Learning Model. By the configurations, one can analyze that this architecture is hybrid of Convolutional Neural Network and Artificial Neural Network. Here, concept of batches is employed to increase the score of training.</h6>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" style="position: absolute; z-index:2; left: -85px; top: 297px;" aria-hidden="true"></span>
+            <span class="sr-only" style="position: absolute; z-index:2; left: -60px; top: 300px;">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" style="position: absolute; z-index:2; left: +165px; top: 297px;" aria-hidden="true"></span>
+            <span class="sr-only" style="position: absolute; z-index:2; left: +140px; top: 300px;">Next</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
