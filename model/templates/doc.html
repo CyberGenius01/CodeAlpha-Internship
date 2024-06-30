@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block title %}
+Documentation
+{% endblock %}
+{% block content %}
+<div class="row gx-5" style="margin-top:0px; color:wheat; font-size:17px;">
+    <div class="col-3 text-center" style="padding:10px;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-transparent" style="width: 23%; min-height: 85vh; text-align:left; padding:20px; margin-left: 0px; position:fixed; top:60px; left:0px">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4">Sidebar</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                        Account
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                        Updates
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                        Application
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                        Contact us
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{url_for('static',filename='media/me.png')}}" alt="" width="50" height="50" class="rounded-circle me-2">
+                    <strong>Aditya Kumar</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6" style="padding-left:10px; padding-right:10px; text-align:justify">
+        <div class="text-center" style="min-width:100%; margin-top: 10px; margin-bottom: 20px; font-size:24px; font-weight: 900; color:white;"><h3>Machine Learning Model Training and Evaluation</h3></div>
+        <p>
+            The code provided demonstrates a comprehensive approach to training and evaluating machine learning models. It covers data preprocessing, model training, and performance evaluation through various metrics and visualizations.
+        </p>
+        <h6 style="color: white; font-size:20px">Overview of Code 1: Machine Learning Models</h6>
+        <p>
+            Code 1 focuses on importing necessary libraries, setting up parameters, preprocessing data, training multiple machine learning models, and evaluating their performance. Here's a step-by-step breakdown:
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size:18px">Importing Libraries and Models</h6>
+        <p>
+            The code imports libraries like <code>pandas</code>, <code>numpy</code>, and various <code>scikit-learn</code> modules necessary for data preprocessing and model evaluation. It also imports several machine learning models.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Initialization of Parameters</h6>
+        <p>
+            Parameters such as the dataset path and columns to be removed are defined.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Importing Dataset</h6>
+        <p>
+            The Titanic dataset is loaded, and specific columns are removed. Missing values are handled using the <code>SimpleImputer</code> class.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Encoding Categorical Data</h6>
+        <p>
+            Categorical features are encoded using <code>OneHotEncoder</code> to convert text data into numerical form.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Normalization</h6>
+        <p>
+            Data normalization is performed using <code>StandardScaler</code> to standardize feature values.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Splitting the Dataset</h6>
+        <p>
+            The dataset is split into training and test sets using <code>train_test_split</code>.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Model Training</h6>
+        <p>
+            Six different machine learning models are trained, including:
+            <ul type="circ">
+                <li>Logistic Regression</li>
+                <li>K-Nearest Neighbors</li>
+                <li>Support Vector Classifier</li>
+                <li>Naive Bayes Classifier</li>
+                <li>Decision Tree Classifier</li>
+                <li>Random Forest Classifier</li>
+            </ul>
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Prediction and ROC Curve Plotting</h6>
+        <p>
+            Predictions are made for each model, and ROC curves are plotted to compare model performance. The best model is selected based on ROC AUC scores.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Plotting Training Results</h6>
+        <p>
+            The decision boundaries of the best model are visualized using contour plots.
+        </p>
+        <h6 style="color: white; font-size:20px">Overview of Code 2: Deep Learning Model</h6>
+        <p>
+            Code 2 demonstrates how to build, train, and evaluate a deep learning model using TensorFlow. Here's a detailed look:
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Importing Libraries</h6>
+        <p>
+            Necessary libraries such as <code>tensorflow</code>, <code>pandas</code>, and <code>matplotlib</code> are imported for deep learning model development and evaluation.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Initialization of Parameters</h6>
+        <p>
+            The dataset path and columns to be removed are specified.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Importing Dataset</h6>
+        <p>
+            The Titanic dataset is loaded, missing values are handled, and categorical features are encoded.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Data Preparation</h6>
+        <p>
+            The data is converted into a TensorFlow dataset, shuffled, and batched for training.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Model Definition</h6>
+        <p>
+            A custom deep learning model is created using TensorFlow's <code>ModelBuilder</code> class, which includes layers for batch normalization, dense layers, and an output layer.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Model Training</h6>
+        <p>
+            The model is compiled and trained on the dataset, and the training history is saved.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Plotting Training Curves</h6>
+        <p>
+            Accuracy and loss curves are plotted to visualize the training process.
+        </p>
+        <h6 style="color: rgb(203 203 203); font-size: 18px">Conclusion</h6>
+        <p>
+            Both codes provide a structured approach to machine learning and deep learning tasks, showcasing data preprocessing, model training, evaluation, and result visualization.
+        </p>
+    </div>
+
+
+
+    <div class="col-3 text-center" style="padding:10px;">
+
+    </div>
+</div>
+{% endblock %}
