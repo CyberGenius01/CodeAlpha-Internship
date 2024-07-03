@@ -47,8 +47,7 @@ class ModelBuilder(tf.keras.Model):
     def __init__(self, name='Classifier', **kwargs):
         super(ModelBuilder, self).__init__(name=name)
         
-        self.bn = tf.keras.layers.BatchNormalization(name='norm')
-        self.conv1D = tf.keras.layers.Conv1D(
+        self.fir_conv1D = tf.keras.layers.Conv1D(
             filters=32,
             kernel_size = 3,
             data_format='channels_last',
@@ -56,13 +55,14 @@ class ModelBuilder(tf.keras.Model):
             activation='elu',
             name='conv1'
         )
-        self.conv1D = tf.keras.layers.Conv1D(
+        self.sec_conv1D = tf.keras.layers.Conv1D(
             filters=64,
             kernel_size = 3,
             data_format='channels_last',
             activation='elu',
             name='conv2'
         )
+        self.bn = tf.keras.layers.BatchNormalization(name='norm')
         self.flatten = tf.keras.layers.Flatten(name='flattening')
         self.dense1 = tf.keras.layers.Dense(
             units=128,
@@ -81,7 +81,9 @@ class ModelBuilder(tf.keras.Model):
         )
         
     def call(self, inputs):
-        x = self.bn(inputs)
+        x = self.fir_conv1D(inputs)
+        x = self.sec_conv1D(x)
+        x = self.bn(x)
         x = self.flatten(x)
         x = self.dense1(x)
         x = self.dense2(x)
@@ -89,17 +91,19 @@ class ModelBuilder(tf.keras.Model):
         
         return x
 
-
-model = ModelBuilder()
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss=tf.keras.losses.BinaryCrossentropy(from_logits=False), metrics=['accuracy'])
-print(model.summary())
-history = model.fit(train_dataset, validation_data=test_dataset, epochs=1500)
 with open('C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\config.json', 'r') as f:
     data = json.load(f)
 files = data[0]['files']
-model.save_weights(files['model'])
-with open(files["history"], 'wb') as f:
-    pickle.dump(history.history, f)
+model = files['model']
+#model = ModelBuilder()
+#model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss=tf.keras.losses.BinaryCrossentropy(from_logits=False), metrics=['accuracy'])
+for batch_X, batch_y in dataset.take(1):
+    model.build(input_shape=batch_X.shape)
+print(model.summary())
+#history = model.fit(train_dataset, validation_data=test_dataset, epochs=1500)
+#model.save_weights(files['model'])
+#with open(files["history"], 'wb') as f:
+#    pickle.dump(history.history, f)
 
 
 def plot_curves():
