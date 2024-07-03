@@ -27,7 +27,14 @@ dataset = tf.data.Dataset.from_tensor_slices((X, y))
 dataset = dataset.shuffle(buffer_size=len(dataset))  # Shuffle dataset
 dataset = dataset.batch(16)
 print(dataset.element_spec)
-dataset = tf.expand_dims(dataset, axis=-1)
+
+# Add an extra dimension to each element in the dataset
+def add_extra_dim(X, y):
+    X = tf.expand_dims(X, axis=-1)
+    return X, y
+
+# Apply the transformation to the dataset
+dataset = dataset.map(add_extra_dim)
 
 ## SPLIT
 train_size = int(0.8 * len(dataset))
