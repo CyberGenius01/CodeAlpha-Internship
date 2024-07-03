@@ -27,6 +27,7 @@ dataset = tf.data.Dataset.from_tensor_slices((X, y))
 dataset = dataset.shuffle(buffer_size=len(dataset))  # Shuffle dataset
 dataset = dataset.batch(16)
 print(dataset.element_spec)
+dataset = tf.expand_dims(dataset, axis=-1)
 
 ## SPLIT
 train_size = int(0.8 * len(dataset))
@@ -43,15 +44,15 @@ class ModelBuilder(tf.keras.Model):
         self.conv1D = tf.keras.layers.Conv1D(
             filters=32,
             kernel_size = 3,
-            data_format='channels_first',
-            input_shape = (16,None,7),
+            data_format='channels_last',
+            input_shape = (16,7,1),
             activation='elu',
             name='conv1'
         )
         self.conv1D = tf.keras.layers.Conv1D(
-            filters=32,
+            filters=64,
             kernel_size = 3,
-            data_format='channels_first',
+            data_format='channels_last',
             activation='elu',
             name='conv2'
         )
@@ -84,7 +85,8 @@ class ModelBuilder(tf.keras.Model):
 
 model = ModelBuilder()
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss=tf.keras.losses.BinaryCrossentropy(from_logits=False), metrics=['accuracy'])
-history = model.fit(train_dataset, validation_data=test_dataset, epochs=100)
+print(model.summary())
+history = model.fit(train_dataset, validation_data=test_dataset, epochs=1500)
 with open('C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\config.json', 'r') as f:
     data = json.load(f)
 files = data[0]['files']
