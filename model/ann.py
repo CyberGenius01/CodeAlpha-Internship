@@ -94,7 +94,8 @@ class ModelBuilder(tf.keras.Model):
 with open('C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\config.json', 'r') as f:
     data = json.load(f)
 files = data[0]['files']
-model = files['model']
+model = ModelBuilder()
+model.load_weights(files['model'])
 #model = ModelBuilder()
 #model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss=tf.keras.losses.BinaryCrossentropy(from_logits=False), metrics=['accuracy'])
 for batch_X, batch_y in dataset.take(1):
