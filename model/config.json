@@ -5,7 +5,13 @@
       "history": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\resources\\history.history",
       "dataset": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\Titanic-Dataset.csv",
       "roc": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\roc.png",
-      "ann": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\ann.png"
+      "ann": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\ann.png",
+      "stock": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\stock.png"
+    }
+  },
+  {
+    "evals": {
+      "stock_mse": ""
     }
   }
 ]

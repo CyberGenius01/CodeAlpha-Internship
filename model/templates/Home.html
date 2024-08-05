@@ -29,7 +29,14 @@ Will Titanic Sink? or not!
                 <img src="{{url_for('static',filename='media/model.png')}}" class="d-block w-95" style="height:500px !important; margin-left: 360px; margin-top:60px;" alt="...">
                 <div class="carousel-caption d-none d-md-block" style="font-family: 'Quicksand'; position: absolute; left: 22%; bottom: +50px; max-width: 800px; border: 1px solid white; border-radius: 8px; margin-bottom: 20px; padding:2px">
                     <h5>Description:</h5><br />
-                                         <h6>This is the model architecture employed in Deep Learning Model. By the configurations, one can analyze that this architecture is hybrid of Convolutional Neural Network and Artificial Neural Network. Here, concept of batches is employed to increase the score of training.</h6>
+                    <h6>This is the model architecture employed in Deep Learning Model. By the configurations, one can analyze that this architecture is hybrid of Convolutional Neural Network and Artificial Neural Network. Here, concept of batches is employed to increase the score of training.</h6>
+                </div>
+            </div>
+            <div class="carousel-item" style=" min-height: 800px !important">
+                <img src="{{url_for('static',filename='media/stock.png')}}" class="d-block w-95" style="height:500px !important; margin-left: 360px; margin-top:60px;" alt="...">
+                <div class="carousel-caption d-none d-md-block" style="font-family: 'Quicksand'; position: absolute; left: 22%; bottom: +50px; max-width: 800px; border: 1px solid white; border-radius: 8px; margin-bottom: 20px; padding:2px">
+                    <h5>Description:</h5><br />
+                    <h6>This is the result of LSTM model applied for the Stock Price Prediction Analysis. The mean squared error is: {{ mse }}</h6>
                 </div>
             </div>
         </div>
