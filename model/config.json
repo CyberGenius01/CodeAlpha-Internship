@@ -1,17 +1,17 @@
 [
-  {
-    "files": {
-      "model": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\resources\\model.weights.h5",
-      "history": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\resources\\history.history",
-      "dataset": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\Titanic-Dataset.csv",
-      "roc": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\roc.png",
-      "ann": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\ann.png",
-      "stock": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\stock.png"
+    {
+        "files": {
+            "model": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\resources\\model.weights.h5",
+            "history": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\resources\\history.history",
+            "dataset": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\Titanic-Dataset.csv",
+            "roc": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\roc.png",
+            "ann": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\ann.png",
+            "stock": "C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\static\\media\\stock.png"
+        }
+    },
+    {
+        "evals": {
+            "stock_mse": "259.22%"
+        }
     }
-  },
-  {
-    "evals": {
-      "stock_mse": ""
-    }
-  }
 ]

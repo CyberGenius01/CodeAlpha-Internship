@@ -9,9 +9,9 @@ import tensorflow as tf
 import json
 
 with open('C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\config.json', 'r') as f:
-    data = json.load(f)
-files = data[0]['files']
-evals = data[1]['evals']
+    jdata = json.load(f)
+files = jdata[0]['files']
+evals = jdata[1]['evals']
 
 # Step 1: Load the Data
 # Replace 'AAPL' with the stock ticker you want to predict
@@ -98,4 +98,4 @@ mse = mean_squared_error(y_test_unscaled, predictions)
 evals['stock_mse'] = f'{(mse*10):.2f}%';
 
 with open('C:\\Users\\ritesh\\Desktop\\CodeSoft\\model\\config.json', 'w') as f:
-    json.dump(data, f, indent=4)
+    json.dump(jdata, f, indent=4)
