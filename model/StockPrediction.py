@@ -82,6 +82,7 @@ predictions = scaler.inverse_transform(predictions)
 y_test_unscaled = scaler.inverse_transform(y_test.reshape(-1, 1))
 
 # Step 6: Visualize the Results
+plt.style.use('dark_background')
 plt.figure(figsize=(14, 5))
 plt.plot(y_test_unscaled, color='cyan', label='Actual Stock Price')
 plt.plot(predictions, color='crimson', label='Predicted Stock Price')
